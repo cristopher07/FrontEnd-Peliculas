@@ -19,18 +19,11 @@ const FormLica = () => {
 
     const detallePelicula = useSelector(({ state }) => state.detallePeliculas);
 
-    
+
 
     const handleChange = (e) => {
         let data = { [e.target.name]: e.target.value };
         dispatch(changeKeyPeliculas(data));
-    };
-
-    const save = () => {
-        addToast("hOLA MUNDO", {
-            appearance: 'success',
-            autoDismiss: true,
-        })
     };
 
     return (
@@ -43,45 +36,44 @@ const FormLica = () => {
                 <Grid container >
 
                     <Grid item lg={6} xs={12}>
-                        <InputFile 
-                        id="nombre"
-                        name="nombre"
-                        onChange={handleChange}
-                        variante="outlined"
-                         texto="Nombre"
-                         value={detallePelicula?.nombre ||""}></InputFile>
-                    </Grid>
-                    <Grid item lg={6} xs={12}>
-                        <InputFile 
-                        id="autor"
-                        name="autor"
-                        onChange={handleChange}
-                        variante="outlined" 
-                        texto="Autor"
-                        value={detallePelicula?.autor  ||""}></InputFile>
+                        <InputFile
+                            id="nombre"
+                            name="nombre"
+                            onChange={handleChange}
+                            variante="outlined"
+                            texto="Nombre"
+                            value={detallePelicula?.nombre || ""}></InputFile>
                     </Grid>
                     <Grid item lg={6} xs={12}>
 
-                        <InputFile 
-                        id="genero"
-                        name="genero"
-                        onChange={handleChange}
-                        variante="outlined"
-                         texto="Género"
-                         value={detallePelicula?.genero  ||""}></InputFile>
+                        <InputFile
+                            id="genero"
+                            name="genero"
+                            onChange={handleChange}
+                            variante="outlined"
+                            texto="Género"
+                            value={detallePelicula?.genero || ""}></InputFile>
                     </Grid>
                     <Grid item lg={6} xs={12}>
-                        <InputFile 
-                        type="number"
-                        id="anio"
-                        name="anio"
-                        onChange={handleChange}
-                        maxLength={4}
-                        variante="outlined" 
-                        texto="Año"
-                        value={detallePelicula?.anio  ||""}></InputFile>
+                        <InputFile
+                            type="number"
+                            id="anio"
+                            name="anio"
+                            onChange={handleChange}
+                            onInput={(e)=>(e.target.value= e.target.value.slice(0,4))}
+                            variante="outlined"
+                            texto="Año"
+                            value={detallePelicula?.anio || ""}></InputFile>
                     </Grid>
-
+                    <Grid item lg={6} xs={12}>
+                        <InputFile
+                            id="autor"
+                            name="autor"
+                            onChange={handleChange}
+                            variante="outlined"
+                            texto="Autor"
+                            value={detallePelicula?.autor || ""}></InputFile>
+                    </Grid>
                 </Grid>
             </Paper>
         </div>

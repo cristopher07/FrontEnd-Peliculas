@@ -7,7 +7,7 @@ const InputFile = (props) => {
       <TextField
       type={props.type}
         style={{ width: "100%" }}
-        inputProps={{ step: props.maxLength }}
+        onInput={props.onInput}
         id={props.id}
         label={props.texto}
         variant={props.variante}

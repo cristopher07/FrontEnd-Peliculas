@@ -103,9 +103,9 @@ const ListPelicula = () => {
   }
   const handleCreateOrEdit = () => {
 
-    const { id_pelicula, nombre, genero, autor, anio, datetime } = detallePelicula;
+    const { id_pelicula, nombre, genero, anio, autor, datetime } = detallePelicula;
     if (id_pelicula === null) {
-      dispatch(createPelicula(nombre, autor, genero, anio, datetime))
+      dispatch(createPelicula(nombre, genero, anio, autor, datetime))
         .then(() => {
           addToast("La información se ha insertado correctamente.", {
             appearance: "success",
@@ -136,7 +136,7 @@ const ListPelicula = () => {
   };
 
 
-
+console.log(peliculas)
 
   const columns = [
     {

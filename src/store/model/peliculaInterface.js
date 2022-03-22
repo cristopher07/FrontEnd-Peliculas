@@ -6,9 +6,8 @@ export const peliculasInterface = (data = {}) => {
         id_pelicula: data?.id_pelicula || null,
         nombre: data?.nombre || "",
         genero: data?.genero || "",
-        autor: data?.autor || "",
         anio: data?.anio || "",
-        datetime: moment().format("lll")  || "",
-        
+        autor: data?.autor || "",
+        datetime: moment().format("lll")  || ""
     }
 }

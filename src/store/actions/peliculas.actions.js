@@ -45,13 +45,13 @@ export const changeKeyPeliculas = (data) => {
 }
 
 export const createPelicula =
-  (nombre, autor, genero, anio, datetime) => async (dispatch) => {
+  (nombre, genero, anio, autor, datetime) => async (dispatch) => {
     try {
       const res = await PeliculaDataService.create({
         nombre,
-        autor,
         genero,
         anio,
+        autor,
         datetime,
       });
       dispatch({
